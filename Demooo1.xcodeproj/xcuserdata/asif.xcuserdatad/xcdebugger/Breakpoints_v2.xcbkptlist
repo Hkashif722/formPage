@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5E727755-F29B-4CF6-A612-6E979237B7D5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39AB0537-E979-456E-A337-E1E3DA48EC4E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Demooo1/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "39AB0537-E979-456E-A337-E1E3DA48EC4E - 5a34beb366a59a73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Demooo1.ViewController.setupUI() -&gt; ()"
+                  moduleName = "Demooo1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asif/Documents/Protfolio/Development/Demooo1/Demooo1/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "39AB0537-E979-456E-A337-E1E3DA48EC4E - 5a34beb366a59a73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Demooo1.ViewController.setupUI() -&gt; ()"
+                  moduleName = "Demooo1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asif/Documents/Protfolio/Development/Demooo1/Demooo1/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "39AB0537-E979-456E-A337-E1E3DA48EC4E - 5a34beb366a59a73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Demooo1.ViewController.setupUI() -&gt; ()"
+                  moduleName = "Demooo1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asif/Documents/Protfolio/Development/Demooo1/Demooo1/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
