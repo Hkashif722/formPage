@@ -6,6 +6,10 @@
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>Our application needs permission to write photos...</string>
+		<key>UIApplicationSupportsTabbedSceneCollection</key>
+		<false/>
 		<key>UISceneConfigurations</key>
 		<dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
@@ -21,5 +25,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>hello</string>
 </dict>
 </plist>
