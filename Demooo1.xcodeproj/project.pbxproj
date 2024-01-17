@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E0A0DA552B528720002BE769 /* VC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0DA542B528720002BE769 /* VC1.swift */; };
 		E0A0DA572B53CDEF002BE769 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0DA562B53CDEF002BE769 /* CustomCells.swift */; };
+		E0A0DA592B570A88002BE769 /* t1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0DA582B570A88002BE769 /* t1.swift */; };
 		E0E67DC82B4920DD00EA5ADC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67DC72B4920DD00EA5ADC /* AppDelegate.swift */; };
 		E0E67DCA2B4920DD00EA5ADC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67DC92B4920DD00EA5ADC /* SceneDelegate.swift */; };
 		E0E67DCC2B4920DD00EA5ADC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E67DCB2B4920DD00EA5ADC /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		E0A0DA542B528720002BE769 /* VC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC1.swift; sourceTree = "<group>"; };
 		E0A0DA562B53CDEF002BE769 /* CustomCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
+		E0A0DA582B570A88002BE769 /* t1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = t1.swift; sourceTree = "<group>"; };
 		E0E67DC42B4920DD00EA5ADC /* Demooo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demooo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E67DC72B4920DD00EA5ADC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E67DC92B4920DD00EA5ADC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				E0E67DDB2B4DB0B800EA5ADC /* SampleViewController.swift */,
 				E0A0DA542B528720002BE769 /* VC1.swift */,
 				E0A0DA562B53CDEF002BE769 /* CustomCells.swift */,
+				E0A0DA582B570A88002BE769 /* t1.swift */,
 			);
 			path = Demooo1;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				E0E67DCC2B4920DD00EA5ADC /* ViewController.swift in Sources */,
 				E0E67DC82B4920DD00EA5ADC /* AppDelegate.swift in Sources */,
+				E0A0DA592B570A88002BE769 /* t1.swift in Sources */,
 				E0A0DA552B528720002BE769 /* VC1.swift in Sources */,
 				E0E67DDC2B4DB0B800EA5ADC /* SampleViewController.swift in Sources */,
 				E0A0DA572B53CDEF002BE769 /* CustomCells.swift in Sources */,
