@@ -64,6 +64,21 @@
                   endingLineNumber = "40"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "39AB0537-E979-456E-A337-E1E3DA48EC4E - e2dd5df01dfab613"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Demooo1.Question.init(from: Swift.Decoder) throws -&gt; Demooo1.Question"
+                  moduleName = "Demooo1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/asif/Documents/Protfolio/Development/Demooo1/Demooo1/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "260"
+                  endingLineNumber = "260"
+                  offsetFromSymbolStart = "164">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

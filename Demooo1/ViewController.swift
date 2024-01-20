@@ -244,35 +244,483 @@
 //-----------------------
 
 
+//import UIKit
+//
+//class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+//
+//    let tableView = UITableView()
+//    var questionList: [(question: String, trainers: [String], selectedFeedback: [String?])] = []
+//    var currentQuestionIndex: Int = 0
+//    var questionText = UILabel()
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        setupQuestionList()
+//        setupUI()
+//
+//        tableView.register(TrainerFeedbackCell.self, forCellReuseIdentifier: "cell")
+//        tableView.tableFooterView = UIView()
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//    }
+//
+//    func setupQuestionList() {
+//        // Sample questions with options
+//        questionList = [
+//            ("What is your favorite color?", ["Trainer A", "Trainer B", "Trainer C"], selectedFeedback: Array(repeating: nil, count: 3)),
+//            ("Which programming language do you prefer Which programming language do you prefer?", ["Trainer X", "Trainer Y", "Trainer Z"], selectedFeedback: Array(repeating: nil, count: 3)),
+//            // Add more questions and trainers as needed
+//        ]
+//    }
+//
+//    func setupUI() {
+//        // Question container view
+//
+//        let questionContainerView = UIView()
+//        questionContainerView.layer.cornerRadius = 10
+//        questionContainerView.layer.borderWidth = 0.5
+//        questionContainerView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(questionContainerView)
+//
+//        // Question Label
+//        questionText.textColor = .black
+//
+//        questionText.numberOfLines = 0
+//        questionText.translatesAutoresizingMaskIntoConstraints = false
+//        questionContainerView.addSubview(questionText)
+//
+//
+//
+//        // Table view
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(tableView)
+//
+//        // Previous button
+//        let previousButton = UIButton()
+//        previousButton.setTitle("Previous", for: .normal)
+//        previousButton.setTitleColor(.blue, for: .normal)
+//        previousButton.addTarget(self, action: #selector(previousButtonTapped), for: .touchUpInside)
+//        previousButton.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(previousButton)
+//
+//        // Next button
+//        let nextButton = UIButton()
+//        nextButton.setTitle("Next", for: .normal)
+//        nextButton.setTitleColor(.blue, for: .normal)
+//        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+//        nextButton.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(nextButton)
+//
+//        // Submit button
+//        let submitButton = UIButton()
+//        submitButton.setTitle("Submit", for: .normal)
+//        submitButton.setTitleColor(.green, for: .normal)
+//        submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
+//        submitButton.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(submitButton)
+//
+//        // Reset button
+//        let resetButton = UIButton()
+//        resetButton.setTitle("Reset", for: .normal)
+//        resetButton.setTitleColor(.red, for: .normal)
+//        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
+//        resetButton.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(resetButton)
+//
+//        let padding = 10.0
+//        // Layout constraints
+//        NSLayoutConstraint.activate([
+//            questionContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+//            questionContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+//            questionContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+//            questionContainerView.bottomAnchor.constraint(greaterThanOrEqualTo: questionText.bottomAnchor, constant: padding),
+//
+//            questionText.topAnchor.constraint(equalTo: questionContainerView.topAnchor, constant: padding),
+//            questionText.leadingAnchor.constraint(equalTo: questionContainerView.leadingAnchor, constant: padding),
+//            questionText.trailingAnchor.constraint(equalTo: questionContainerView.trailingAnchor, constant: -padding),
+//
+//            tableView.topAnchor.constraint(equalTo: questionText.bottomAnchor, constant: 20),
+//            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+//
+//            previousButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
+//            previousButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//
+//            nextButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
+//            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+//
+//            submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            submitButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+//
+//            resetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            resetButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+//        ])
+//
+//        updateUIForCurrentQuestion()
+//    }
+//
+//    func updateUIForCurrentQuestion() {
+//        let currentQuestion = questionList[currentQuestionIndex]
+//        questionText.text = currentQuestion.question
+//        title = "Question \(currentQuestionIndex + 1)"
+//    }
+//
+//    @objc func previousButtonTapped() {
+//        if currentQuestionIndex > 0 {
+//            currentQuestionIndex -= 1
+//            updateUIForCurrentQuestion()
+//            tableView.reloadData()
+//        }
+//    }
+//
+//    @objc func nextButtonTapped() {
+//        if currentQuestionIndex < questionList.count - 1 {
+//            currentQuestionIndex += 1
+//            updateUIForCurrentQuestion()
+//            tableView.reloadData()
+//        }
+//    }
+//
+//    @objc func submitButtonTapped() {
+//        submitResponse()
+//    }
+//
+//    @objc func resetButtonTapped() {
+//        resetSelections()
+//    }
+//
+//    func submitResponse() {
+//        for (index, question) in questionList.enumerated() {
+//            let selectedFeedback = question.selectedFeedback.compactMap { $0 }
+//            print("Question \(index + 1): \(question.question) - Selected Feedback: \(selectedFeedback.joined(separator: ", "))")
+//        }
+//        // Add your API call here to submit the responses
+//    }
+//
+//    func resetSelections() {
+//        for i in 0..<questionList[currentQuestionIndex].selectedFeedback.count {
+//            questionList[currentQuestionIndex].selectedFeedback[i] = nil
+//        }
+//        tableView.reloadData()
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return questionList[currentQuestionIndex].trainers.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TrainerFeedbackCell else {
+//            return UITableViewCell()
+//        }
+//
+//        let trainer = questionList[currentQuestionIndex].trainers[indexPath.row]
+//        let selectedFeedback = questionList[currentQuestionIndex].selectedFeedback[indexPath.row]
+//        cell.textLabel?.text = trainer
+//        cell.feedbackButton.setTitle(selectedFeedback ?? "Select Feedback", for: .normal)
+//        cell.feedbackButton.tag = indexPath.row
+//        cell.feedbackButton.addTarget(self, action: #selector(feedbackButtonTapped(_:)), for: .touchUpInside)
+//
+//        return cell
+//    }
+//
+//    @objc func feedbackButtonTapped(_ sender: UIButton) {
+//        let trainerIndex = sender.tag
+//        let feedbackOptions = ["Not Good", "Good", "Best", "Excellent"]
+//
+//        let feedbackSelectionVC = FeedbackSelectionViewController(options: feedbackOptions) { selectedFeedback in
+//            self.questionList[self.currentQuestionIndex].selectedFeedback[trainerIndex] = selectedFeedback
+//            self.tableView.reloadData()
+//        }
+//
+//        present(feedbackSelectionVC, animated: true, completion: nil)
+//    }
+//}
+//
+//class TrainerFeedbackCell: UITableViewCell {
+//    let feedbackButton: UIButton = {
+//        let button = UIButton()
+//        button.setTitleColor(.blue, for: .normal)
+//        return button
+//    }()
+//
+//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+//        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        setupUI()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setupUI()
+//    }
+//
+//    private func setupUI() {
+//        contentView.addSubview(feedbackButton)
+//
+//        // Add additional UI elements as needed
+//        let padding: CGFloat = 8.0
+//
+//        // Layout constraints for the feedback button
+//        feedbackButton.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            feedbackButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
+//            feedbackButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
+//            feedbackButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//        ])
+//    }
+//}
+//
+//class FeedbackSelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+//
+//    private let tableView = UITableView()
+//    private let selectOptionLbl = UILabel()
+//    private let options: [String]
+//    private let selectionHandler: (String) -> Void
+//
+//    init(options: [String], selectionHandler: @escaping (String) -> Void) {
+//        self.options = options
+//        self.selectionHandler = selectionHandler
+//        super.init(nibName: nil, bundle: nil)
+//
+//        modalPresentationStyle = .overCurrentContext
+//        modalTransitionStyle = .crossDissolve
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+//
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "feedbackCell")
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        setupView()
+//
+//    }
+//    private func setupView() {
+//        // Container view to center the pop-up
+//        let containerView = UIView()
+//        containerView.backgroundColor = .white
+//        containerView.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.layer.cornerRadius = 10
+//        containerView.clipsToBounds = true
+//        view.addSubview(containerView)
+//
+//        // Layout constraints for the container view
+//        NSLayoutConstraint.activate([
+//            containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40),
+//            containerView.widthAnchor.constraint(equalToConstant: view.bounds.width - 32),
+//            containerView.heightAnchor.constraint(equalToConstant: min(300, CGFloat(options.count) * 44.0 + 100))  // Adjust the height as needed
+//        ])
+//
+//
+//
+//        // Layout constraints for the title label
+//        selectOptionLbl.text = "Please Select Feedback for Trainer"
+//        selectOptionLbl.textColor = .black
+//        selectOptionLbl.textAlignment = .center
+//        selectOptionLbl.backgroundColor = .white
+//        selectOptionLbl.font = UIFont.boldSystemFont(ofSize: 16)
+//        selectOptionLbl.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.addSubview(selectOptionLbl)
+//
+//        // divider
+//
+//        let divider = UIView()
+//        divider.backgroundColor = .gray
+//        divider.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.addSubview(divider)
+//
+//
+//        // Layout constraints for the table view
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+//        containerView.addSubview(tableView)
+//
+//        NSLayoutConstraint.activate([
+//            // Constraints for the title label
+//            selectOptionLbl.topAnchor.constraint(equalTo: containerView.topAnchor),
+//            selectOptionLbl.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+//            selectOptionLbl.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+//            selectOptionLbl.heightAnchor.constraint(equalToConstant: 40),
+//
+//            divider.topAnchor.constraint(equalTo: selectOptionLbl.bottomAnchor, constant: 5),
+//            divider.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+//            divider.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+//            divider.heightAnchor.constraint(equalToConstant: 2),
+//
+//            // Constraints for the table view
+//            tableView.topAnchor.constraint(equalTo: divider.bottomAnchor, constant: 5),
+//            tableView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+//            tableView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
+//        ])
+//    }
+//
+//
+//
+//
+//
+//
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return options.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "feedbackCell", for: indexPath)
+//        cell.textLabel?.text = options[indexPath.row]
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedFeedback = options[indexPath.row]
+//        selectionHandler(selectedFeedback)
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
+
+
+
+
+
 import UIKit
+
+// Question.swift
+struct Question: Decodable {
+    let id: Int
+    let questionText: String
+    var options: [Option]
+    var trainers: [String]?
+    var selectedFeedback: [String?]?
+}
+
+// Option.swift
+struct Option: Decodable {
+    let id: Int
+    let option: String
+    let rating: Int
+    let weightage: Double?
+}
+
+// Trainer.swift
+struct Trainer: Decodable {
+    let userId: Int
+    let userName: String
+}
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView()
-    var questionList: [(question: String, trainers: [String], selectedFeedback: [String?])] = []
+    var questionList: [Question] = []
     var currentQuestionIndex: Int = 0
     var questionText = UILabel()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupQuestionList()
+//        setupQuestionList()
+        let questionsData = """
+               [
+                 {
+                   "id": 136,
+                   "questionText": "What is your favorite color? What is your favorite color?",
+                   "options": [
+                     {
+                       "id": 366,
+                       "option": "1",
+                       "rating": 0,
+                       "weightage": null
+                     },
+                     {
+                       "id": 367,
+                       "option": "2",
+                       "rating": 0,
+                       "weightage": null
+                     }
+                   ]
+                 },
+                 {
+                   "id": 135,
+                   "questionText": "Which programming language do you prefer?",
+                   "options": [
+                     {
+                       "id": 364,
+                       "option": "One",
+                       "rating": 0,
+                       "weightage": null
+                     },
+                     {
+                       "id": 365,
+                       "option": "Two",
+                       "rating": 0,
+                       "weightage": null
+                     }
+                   ]
+                 }
+               ]
+               """
+
+            // Sample data for Trainers
+            let trainersData = """
+               [
+                 {
+                   "userId": 2549,
+                   "userName": "Trainer A"
+                 },
+                 {
+                   "userId": 2553,
+                   "userName": "Trainer Y"
+                 },
+                 {
+                   "userId": 2554,
+                   "userName": "Trainer Z"
+                 }
+               ]
+               """
+
+        do {
+            // Decode JSON data into an array of Question objects
+            var decodedQuestions = try JSONDecoder().decode([Question].self, from: Data(questionsData.utf8))
+
+            // Decode JSON data into an array of Trainer objects
+            let trainers = try JSONDecoder().decode([Trainer].self, from: Data(trainersData.utf8))
+
+            // Assign trainers to each question
+            // Assign trainers to each question
+            for i in 0..<decodedQuestions.count {
+                decodedQuestions[i].trainers = trainers.map { $0.userName }
+                decodedQuestions[i].selectedFeedback = Array(repeating: nil, count: trainers.count)
+            }
+
+            // Update your questionList with the modified questions array
+            questionList = decodedQuestions
+            print(questionList)
+        } catch {
+            print("Error decoding JSON: \(error)")
+        }
         setupUI()
 
-        tableView.register(TrainerFeedbackCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TrainerFeedbackCell.self, forCellReuseIdentifier: TrainerFeedbackCell.identifier)
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
     }
 
-    func setupQuestionList() {
-        // Sample questions with options
-        questionList = [
-            ("What is your favorite color?", ["Trainer A", "Trainer B", "Trainer C"], selectedFeedback: Array(repeating: nil, count: 3)),
-            ("Which programming language do you prefer Which programming language do you prefer?", ["Trainer X", "Trainer Y", "Trainer Z"], selectedFeedback: Array(repeating: nil, count: 3)),
-            // Add more questions and trainers as needed
-        ]
-    }
+//    func setupQuestionList() {
+//        // Sample questions with options
+//        questionList = [
+//            ("What is your favorite color?", ["Trainer A", "Trainer B", "Trainer C"], selectedFeedback: Array(repeating: nil, count: 3)),
+//            ("Which programming language do you prefer Which programming language do you prefer?", ["Trainer X", "Trainer Y", "Trainer Z"], selectedFeedback: Array(repeating: nil, count: 3)),
+//            // Add more questions and trainers as needed
+//        ]
+//    }
 
     func setupUI() {
         // Question container view
@@ -363,7 +811,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func updateUIForCurrentQuestion() {
         let currentQuestion = questionList[currentQuestionIndex]
-        questionText.text = currentQuestion.question
+        questionText.text = currentQuestion.questionText
         title = "Question \(currentQuestionIndex + 1)"
     }
 
@@ -393,30 +841,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func submitResponse() {
         for (index, question) in questionList.enumerated() {
-            let selectedFeedback = question.selectedFeedback.compactMap { $0 }
-            print("Question \(index + 1): \(question.question) - Selected Feedback: \(selectedFeedback.joined(separator: ", "))")
+            let selectedFeedback = question.selectedFeedback?.compactMap { $0 }
+            print("Question \(index + 1): \(question.questionText) - Selected Feedback: \(selectedFeedback?.joined(separator: ", "))")
         }
         // Add your API call here to submit the responses
     }
 
     func resetSelections() {
-        for i in 0..<questionList[currentQuestionIndex].selectedFeedback.count {
-            questionList[currentQuestionIndex].selectedFeedback[i] = nil
+        for i in 0..<questionList[currentQuestionIndex].selectedFeedback!.count {
+            questionList[currentQuestionIndex].selectedFeedback?[i] = nil
         }
         tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questionList[currentQuestionIndex].trainers.count
+        return questionList[currentQuestionIndex].trainers?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TrainerFeedbackCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrainerFeedbackCell.identifier , for: indexPath) as? TrainerFeedbackCell else {
             return UITableViewCell()
         }
 
-        let trainer = questionList[currentQuestionIndex].trainers[indexPath.row]
-        let selectedFeedback = questionList[currentQuestionIndex].selectedFeedback[indexPath.row]
+        let trainer = questionList[currentQuestionIndex].trainers?[indexPath.row]
+        let selectedFeedback = questionList[currentQuestionIndex].selectedFeedback?[indexPath.row]
         cell.textLabel?.text = trainer
         cell.feedbackButton.setTitle(selectedFeedback ?? "Select Feedback", for: .normal)
         cell.feedbackButton.tag = indexPath.row
@@ -427,10 +875,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @objc func feedbackButtonTapped(_ sender: UIButton) {
         let trainerIndex = sender.tag
-        let feedbackOptions = ["Not Good", "Good", "Best", "Excellent"]
+        let feedbackOptions = questionList[currentQuestionIndex].options
 
         let feedbackSelectionVC = FeedbackSelectionViewController(options: feedbackOptions) { selectedFeedback in
-            self.questionList[self.currentQuestionIndex].selectedFeedback[trainerIndex] = selectedFeedback
+            self.questionList[self.currentQuestionIndex].selectedFeedback?[trainerIndex] = selectedFeedback
             self.tableView.reloadData()
         }
 
@@ -439,6 +887,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 }
 
 class TrainerFeedbackCell: UITableViewCell {
+    static let identifier = "TrainerFeedbackCellIdentifier"
     let feedbackButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.blue, for: .normal)
@@ -475,10 +924,10 @@ class FeedbackSelectionViewController: UIViewController, UITableViewDelegate, UI
 
     private let tableView = UITableView()
     private let selectOptionLbl = UILabel()
-    private let options: [String]
+    private let options: [Option]
     private let selectionHandler: (String) -> Void
 
-    init(options: [String], selectionHandler: @escaping (String) -> Void) {
+    init(options: [Option], selectionHandler: @escaping (String) -> Void) {
         self.options = options
         self.selectionHandler = selectionHandler
         super.init(nibName: nil, bundle: nil)
@@ -574,12 +1023,12 @@ class FeedbackSelectionViewController: UIViewController, UITableViewDelegate, UI
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedbackCell", for: indexPath)
-        cell.textLabel?.text = options[indexPath.row]
+        cell.textLabel?.text = options[indexPath.row].option
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedFeedback = options[indexPath.row]
+        let selectedFeedback = options[indexPath.row].option
         selectionHandler(selectedFeedback)
         dismiss(animated: true, completion: nil)
     }
